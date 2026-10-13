@@ -1389,10 +1389,11 @@ does not try to.
 
 ## 11. Implementations
 
-AgentMesh runs a registrar at `https://naming.agentmesh.ai`. It is the
-reference registrar this document cites for its defaults.
-<!-- OPEN-REGISTRAR: when the open-source registrar is released, name its public repository here. -->
-Live and
+The reference implementation is the Personal Agent Naming registrar,
+https://github.com/AgentNaming/pan-registrar, open source under the Apache
+2.0 license. AgentMesh, the sponsor, runs a release of it at
+`https://naming.agentmesh.ai`, the deployment this document cites for its
+defaults. Live and
 verified end-to-end: email-tier claiming, §4.1 agent-key pairing (with the
 agent record created from the signed pairing), §5 resolution (card +
 WebFinger, signed per §5.3), and the §6 hash-chained, owner-scoped history
