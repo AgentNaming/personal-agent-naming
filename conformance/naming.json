@@ -1,0 +1,33 @@
+{
+  "comment": "Naming wire-format conformance fixture. The registrar (Rust, naming/) and the adapter/SDK (JS, mesh-adapter/) MUST both reproduce these exact bytes; a drift on either side breaks pairing, check-in, or card verification silently. Tests: naming/src/registrar.rs (mod naming_conformance) and mesh-adapter/test/conformance.mjs. The Rust half named a tests/conformance.rs that never existed until 2026-08-10, so for its whole life this fixture pinned only the JavaScript READER while the registrar that MINTS AND SIGNS cards was held to nothing; it lives inside registrar.rs because the crate has no library target for an integration test to import.",
+  "pair": {
+    "code": "KX4-92F",
+    "agent_id": "UAGENTKEYEXAMPLE234567",
+    "canonical": "pan-pair-v1:KX4-92F:UAGENTKEYEXAMPLE234567"
+  },
+  "checkin_v3": {
+    "ts": 1753200000,
+    "agent_id": "UAGENTKEYEXAMPLE234567",
+    "kind": "claude-code",
+    "host": "devbox",
+    "platform": "win32",
+    "encryption_key": "XDH25519EXAMPLEKEY",
+    "canonical": "pan-checkin-v3\n1753200000\nUAGENTKEYEXAMPLE234567\nclaude-code\ndevbox\nwin32\nXDH25519EXAMPLEKEY"
+  },
+  "card": {
+    "value": {
+      "handle": "Coder.ana@example.org",
+      "operator": { "name": "Chloë Varga ✓" },
+      "claimed_via": "delegated:agentmesh.ai",
+      "binding": "agent-key",
+      "claimed_at": "2026-07-18T09:00:00Z",
+      "encryption_key": "XDH25519EXAMPLEKEY",
+      "endpoints": [
+        { "protocol": "agentmesh", "agent_id": "UAGENTKEYEXAMPLE234567", "node": "UNODEKEYEXAMPLE234567" },
+        { "protocol": "a2a", "url": "https://example.com/.well-known/agent-card.json" }
+      ],
+      "presence": { "state": "online", "last_seen_at": "2026-07-22T12:00:00Z", "seq": 42 }
+    },
+    "canonical": "{\"binding\":\"agent-key\",\"claimed_at\":\"2026-07-18T09:00:00Z\",\"claimed_via\":\"delegated:agentmesh.ai\",\"encryption_key\":\"XDH25519EXAMPLEKEY\",\"endpoints\":[{\"agent_id\":\"UAGENTKEYEXAMPLE234567\",\"node\":\"UNODEKEYEXAMPLE234567\",\"protocol\":\"agentmesh\"},{\"protocol\":\"a2a\",\"url\":\"https://example.com/.well-known/agent-card.json\"}],\"handle\":\"Coder.ana@example.org\",\"operator\":{\"name\":\"Chloë Varga ✓\"},\"presence\":{\"last_seen_at\":\"2026-07-22T12:00:00Z\",\"seq\":42,\"state\":\"online\"}}"
+  }
+}
